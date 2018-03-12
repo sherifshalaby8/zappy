@@ -23,9 +23,9 @@ router.post('/slack/events', slackEvents.expressMiddleware());
 // Attach listeners to events by Slack Event "type". See: https://api.slack.com/events/message.im
 slackEvents.on('message', (event)=> {
   if(event.text.indexOf('go') > 0){
-     
+    console.log(`Received a message event: user ${event.user} in channel ${event.channel} says ${event.text}`);
   }
- // console.log(`Received a message event: user ${event.user} in channel ${event.channel} says ${event.text}`);
+ console.log(`Received a message event: user ${event.user} in channel ${event.channel} says ${event.text}`);
 });
 
 // Handle errors (see `errorCodes` export)

@@ -13,6 +13,8 @@ twitterClient.get('statuses/user_timeline', twitterCallParams, function(error, t
     for (tweet in tweets) {
       console.log(tweets[tweet].text);
     }
+  }else{
+    console.log(error);
   }
 });
 

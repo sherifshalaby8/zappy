@@ -12,15 +12,11 @@ slackEvents.on('message', (event) => {
   if (event.text.indexOf('go') > -1) {
     var twitterCallParams = { screen_name: 'FictionFone' };
     twitterClient.get('statuses/user_timeline', twitterCallParams, function (error, tweets, response) {
-      // console.log('trying to recieve tweets');
       if (!error) {
-        // console.log('Received tweets');
         for (tweet in tweets) {
-
-          var FictionFoneTweet = new TweetModel({ name: tweets[tweet].text, account: tweets[tweet].account });
+          var FictionFoneTweet = new TweetModel({ name: tweets[tweet].text, account: tweets[tweet].user.screen_name });
           FictionFoneTweet.save(function (err, FictionFoneTweet) {
             if (err) return console.error(err);
-            console.log(FictionFoneTweet.account + ' Saved in mongo db' );
           });
 
         }
@@ -30,7 +26,6 @@ slackEvents.on('message', (event) => {
     });
 
   }
-  console.log(`Received a message event: user ${event.user} in channel ${event.channel} says ${event.text}`);
 });
 
 // Handle errors (see `errorCodes` export)

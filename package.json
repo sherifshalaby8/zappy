@@ -1,0 +1,32 @@
+{
+  "name": "zappy",
+  "version": "1.0.0",
+  "description": "Zappy integrates with a Slack channel and listens on specific messages. For simplicity, we the tool will listen on all messages containing the word “go”. As soon as any member of the marketing team, places a messages on a channel containing the message “go”, the tool fetches twitter feeds from the FictionFone account and saves in a mongo collection. Lastly, for our demo purpose, you will create a view that fetches tweets from mongoDB and shows in a table",
+  "main": "./app/server",
+  "scripts": {
+    "dev": "./node_modules/.bin/nodemon ./app/server",
+    "start": "node ./app/server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "zappy",
+    "mongodb",
+    "slack",
+    "twitter",
+    "angular 4"
+  ],
+  "author": "Sherif Shalaby",
+  "license": "ISC",
+  "dependencies": {
+    "@slack/events-api": "^1.0.1",
+    "body-parser": "^1.18.2",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.2",
+    "mongoose": "^5.0.9",
+    "npm": "^5.7.1",
+    "twitter": "^1.7.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.1"
+  }
+}

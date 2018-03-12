@@ -17,7 +17,7 @@ slackEvents.on('message', (event) => {
         // console.log('Received tweets');
         for (tweet in tweets) {
 
-          var FictionFoneTweet = new TweetModel({ name: tweets[tweet].text, account: FictionFoneTweet.account });
+          var FictionFoneTweet = new TweetModel({ name: tweets[tweet].text, account: tweets[tweet].account });
           FictionFoneTweet.save(function (err, FictionFoneTweet) {
             if (err) return console.error(err);
             console.log(FictionFoneTweet.account + ' Saved in mongo db' );

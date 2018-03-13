@@ -1,7 +1,7 @@
 var mongoose = require('./../mongooseDB')
 
 var Tweet = mongoose.Schema({
-    name: String,
+    name: {type: String, unique : true, required : true},
     account: String
   });
   

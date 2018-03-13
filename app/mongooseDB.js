@@ -7,6 +7,6 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 // parse application/json
 db.once('open', function () {
-  console.log('connected');
+  console.log('connected to mongodb');
 });
 module.exports = mongoose;

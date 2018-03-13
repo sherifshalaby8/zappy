@@ -27,7 +27,7 @@ slackEvents.on('message', (event) => {
 
   }
 });
-
+console.log('Listening to slack events');
 // Handle errors (see `errorCodes` export)
 slackEvents.on('error', console.error);
 module.exports = router;
